@@ -9,7 +9,7 @@ arch=(any)
 url="https://pypi.org/project/colcon-ros/"
 license=('Apache')
 depends=('python-colcon-core' 'python-colcon-library-path' 'python-colcon-cmake' 'python-colcon-pkg-config' 'python-colcon-recursive-crawl' 'python-colcon-python-setup-py' 'python-pyparsing' 'python-catkin_pkg')
-makedepends=('python-setuptools' 'python-build' 'python-wheel' 'python-installer' 'flake8' 'python-pip' 'python-pipx')
+makedepends=('python-setuptools' 'python-build' 'python-wheel' 'python-installer' 'flake8')
 source=(
     https://github.com/colcon/colcon-ros/archive/refs/tags/${pkgver}.tar.gz
     https://github.com/myint/scspell/archive/refs/tags/v2.2.tar.gz)
@@ -19,7 +19,6 @@ sha256sums=(
 
 build() {
     cd ${srcdir}/${_name}-${pkgver}
-    pipx install colcon-core
     python -m build --wheel --no-isolation
 }
 
