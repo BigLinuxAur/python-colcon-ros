@@ -19,6 +19,7 @@ sha256sums=(
 
 build() {
     cd ${srcdir}/${_name}-${pkgver}
+    pip install colcon_core
     python -m build --wheel --no-isolation
 }
 
